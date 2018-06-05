@@ -1,10 +1,10 @@
 {
-  "name": "@islavi/ng2-component-lab",
-  "version": "1.0.28",
+  "name": "@islavi/ng-component-lab",
+  "version": "1.2.0",
   "description": "Build Angular 2 components in a controlled, isolated environment. This is fork from <a href='https://github.com/synapse-wireless-labs/component-lab.git'>https://github.com/synapse-wireless-labs/component-lab.git</a> which use angular 2 and fix some bugs.",
   "main": "index.js",
   "repository": {
-    "url": "https://github.com/islavi/ng2-component-lab.git",
+    "url": "https://github.com/islavi/ng-component-lab.git",
     "type": "git"
   },
   "authors": [
@@ -18,7 +18,7 @@
   ],
   "license": "MIT",
   "bin": {
-    "ng2-component-lab": "./src/cli.js"
+    "ng-component-lab": "./src/cli.js"
   },
   "scripts": {
     "copy": "cpy package.json README.md index.html release",
@@ -26,42 +26,44 @@
     "build:js": "tsc -p tsconfig.dist.json",
     "build:cli": "tsc -p tsconfig.cli.json",
     "build:umd": "rollup -c rollup.config.js",
-    "build:uglify": "uglifyjs -c --screw-ie8 --comments -o ./release/bundles/ng2-component-lab.min.umd.js ./release/bundles/ng2-component-lab.umd.js",
+    "build:uglify": "uglifyjs -c --screw-ie8 --comments -o ./release/bundles/ng-component-lab.min.umd.js ./release/bundles/ng-component-lab.umd.js",
     "prebuild": "yarn run clean",
     "build": "yarn run build:js && yarn run build:umd && yarn run build:uglify && yarn build:cli",
     "postbuild": "yarn run copy"
   },
   "dependencies": {
-    "chalk": "^1.1.3",
-    "html-webpack-plugin": "^2.22.0",
+    "chalk": "^2.4.1",
     "ie-shim": "^0.1.0",
-    "interpret": "^1.0.1",
-    "liftoff": "^2.3.0",
-    "lodash": "^4.17.4",
+    "interpret": "^1.1.0",
+    "liftoff": "^2.5.0",
+    "lodash": "4.17.10",
     "minimist": "^1.2.0",
-    "reflect-metadata": "^0.1.3",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5",
-    "zone.js": "~0.6.26"
+    "reflect-metadata": "^0.1.12",
+    "typings": "^2.1.1",
+    "webpack": "4.10.2",
+    "webpack-dev-server": "3.1.4",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular/compiler": "^5.0.0",
-    "@angular/common": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
-    "@angular/platform-browser-dynamic": "^5.0.0",
-    "@angular/router": "~5.0.0",
-    "@types/chalk": "^0.4.30",
-    "@types/lodash": "^4.14.37",
-    "@types/node": "^6.0.45",
+    "@angular/common": "5.0.5",
+    "@angular/compiler": "5.0.5",
+    "@angular/core": "5.0.5",
+    "@angular/platform-browser": "5.0.5",
+    "@angular/platform-browser-dynamic": "5.0.5",
+    "@angular/router": "5.0.5",
+    "@types/lodash": "4.14.109",
+    "@types/node": "^10.3.0",
     "browserify-css": "^0.14.0",
-    "cpy-cli": "^1.0.1",
-    "prismjs": "^1.8.4",
-    "rimraf": "^2.5.4",
-    "rollup": "^0.58.2",
-    "rxjs": "^5.5.2",
-    "typescript": "^2.0.3",
-    "uglifyjs": "^2.4.10",
-    "zone.js": "^0.6.25"
+    "html-webpack-plugin": "3.2.0",
+    "html-replace-webpack-plugin": "^2.5.0",
+    "awesome-typescript-loader": "3.5.0",
+    "cpy-cli": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "prismjs": "^1.14.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.59.4",
+    "rxjs": "5.5.0",
+    "typescript": "2.4.2",
+    "uglifyjs": "^2.4.11"
   }
 }

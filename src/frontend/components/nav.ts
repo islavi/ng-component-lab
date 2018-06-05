@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   host: {'class': 'cl-nav'},
   template: `
     <div class="component-lab-logo">
-      <a href="https://github.com/islavi/ng2-component-lab" target="_blank"><h3>NG2 COMPONENT LAB</h3></a>
+      <a href="https://github.com/islavi/ng-component-lab" target="_blank"><h3>NG COMPONENT LAB</h3></a>
       <button>⌘</button>
     </div>
 

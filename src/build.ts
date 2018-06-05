@@ -2,14 +2,14 @@ import { ComponentLabConfig } from './config';
 import * as _ from "lodash";
 
 const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
+// const WebpackDevServer = require('webpack-dev-server');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 export function buildServer(config: ComponentLabConfig, suite: string) {
+  console.log("Config from hosting app: " + JSON.stringify(config));
   var webpackConfig: any = {};
-
   const includes = config.include || [];
 
   webpackConfig.entry = {
@@ -22,7 +22,7 @@ export function buildServer(config: ComponentLabConfig, suite: string) {
   webpackConfig.output = {
     path: path.resolve('.dist'),
     publicPath: '',
-    filename: "[name].ng2-component-lab.bundle.js"
+    filename: "[name].ng-component-lab.bundle.js"
   };
 
   // Merge both webpackConfig

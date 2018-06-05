@@ -17,6 +17,11 @@ export interface DevServerConfig {
 }
 
 export function startServer(config: ComponentLabConfig, suite: string) {
+
+  console.log("Config from hosting app: " + JSON.stringify(config));
+	console.log("__dirname: " + __dirname);
+	console.log("suite: " + config.suites[suite]);
+
   const webpackConfig: any = config.webpackConfig;
   const devServerConfig: DevServerConfig = webpackConfig.devServer;
   let https = false,

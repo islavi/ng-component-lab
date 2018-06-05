@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'ng2-component-lab',
+  selector: 'ng-component-lab',
   encapsulation: ViewEncapsulation.None,
   template: `
     <router-outlet></router-outlet>

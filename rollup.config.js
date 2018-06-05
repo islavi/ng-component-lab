@@ -2,7 +2,7 @@ export default {
   input: './release/index.js',
   output: {
       name: 'ng-component-lab',
-      file: './release/bundles/ng2-component-lab.umd.js',
+      file: './release/bundles/ng-component-lab.umd.js',
       format: 'umd',
       exports: 'named',
       moduleName: 'ngComponentLab'
@@ -29,9 +29,9 @@ export default {
     // should intercept ... but doesn't in some rollup versions
     if ( warning.code === 'THIS_IS_UNDEFINED' ) { return; }
 
-    console.warn( warning.code );
+    // console.warn( warning.code );
 
     // console.warn everything else
-    console.warn( "israel" + JSON.stringify(warning)); // warning.message );
+    console.warn(warning.message );
   }
 }

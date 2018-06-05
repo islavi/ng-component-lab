@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 import { startServer } from './server';
 import { buildServer } from './build';
 const Liftoff = require('liftoff');
@@ -11,9 +11,9 @@ const args = minimist(process.argv.slice(2));
 const ComponentLab = new Liftoff({
   name: 'run-lab',
   extensions: interpret.jsVariants,
-  configName: 'ng2-component-lab.config',
+  configName: 'ng-component-lab.config',
   configFiles: {
-    'ng2-component-lab.config': {
+    'ng-component-lab.config': {
       up: {
         path: '.',
         findUp: true
@@ -49,7 +49,7 @@ function invoke(env: any) {
   }
 
   if (!env.configPath) {
-    log(chalk.red('No local ng2-component-lab config file found'));
+    log(chalk.red('No local ng-component-lab config file found'));
     process.exit(1);
   }
 
@@ -60,6 +60,6 @@ function invoke(env: any) {
     buildServer(config, suite);
   } else {
     log("Starting web server ...");
-    startServer(config, suite);
+    startServer(config, suite);    
   }
 }

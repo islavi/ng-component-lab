@@ -14,4 +14,4 @@ deploy:
     on:
       tags: true
       branch: master
-      repo: islavi/ng2-component-lab
+      repo: islavi/ng-component-lab

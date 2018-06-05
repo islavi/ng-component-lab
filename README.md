@@ -1,26 +1,26 @@
-# Ng2 Component Lab 
+# Ng Component Lab 
 A component development and testing tool built for Angular 2, inspired by [React Storybook](https://getstorybook.io/)
 This is a fork from <a href='https://github.com/synapse-wireless-labs/component-lab'>component-lab</a> with some bug fixes and with angular 2 instead of angular 4.
 
 ### Getting Started
 
 #### Installation and Configuration
-1. Install NG2 Component Lab:
+1. Install NG Component Lab:
   Via npm:
   ```bash
-  npm install @islavi/ng2-component-lab --save-dev
+  npm install @islavi/ng-component-lab --save-dev
   ```
 
   Via yarn:
   ```bash
-  yarn add @islavi/ng2-component-lab --dev
+  yarn add @islavi/ng-component-lab --dev
   ```
 
-2. The best way to understand how to configure ng2-component-lab is to download the example from <a href="https://github.com/islavi/ng2-component-lab-example">https://github.com/islavi/ng2-component-lab-example</a>
+2. The best way to understand how to configure ng-component-lab is to download the example from <a href="https://github.com/islavi/ng-component-lab-example">https://github.com/islavi/ng-component-lab-example</a>
   The following files should be configured:
 
-  `ng2-lab-webpack.config.js` file in the root of your project
-  This is webpack configuration file for ng2-component-lab
+  `ng-lab-webpack.config.js` file in the root of your project
+  This is webpack configuration file for ng-component-lab
   Below is example file:
 
   ```js
@@ -68,11 +68,11 @@ This is a fork from <a href='https://github.com/synapse-wireless-labs/component-
   module.exports = webpackConfig;
   ```
 3. Create folder `.lab` in the root of your application, and create two files inside of it:
-  First file: `ng2-component-lab.config.js` - configuration file of ng2-component-lab.
+  First file: `ng-component-lab.config.js` - configuration file of ng-component-lab.
   Example:
 
   ```js
-  var getWebPackConfig = require('./../ng2-lab-webpack.config');
+  var getWebPackConfig = require('./../ng-lab-webpack.config');
 
   module.exports = {
     webpackConfig: getWebPackConfig,
@@ -80,15 +80,15 @@ This is a fork from <a href='https://github.com/synapse-wireless-labs/component-
     port: 6007,
     include: [],
     suites: {
-      feature: './.lab/ng2-lab-configuration.module.ts'
+      feature: './.lab/ng-lab-configuration.module.ts'
     }
   }; 
   ```
-  Second file: `ng2-lab-configuration.module.ts` - configuration module for ng2-component-lab.
+  Second file: `ng-lab-configuration.module.ts` - configuration module for ng-component-lab.
   Example:
 
   ```js
-  import { createLab } from '@islavi/ng2-component-lab';
+  import { createLab } from '@islavi/ng-component-lab';
   import { ComponentsModule } from './../components/components.module';
 
   createLab({
@@ -122,7 +122,7 @@ This is a fork from <a href='https://github.com/synapse-wireless-labs/component-
   Example:
 
   ```ts
-  import { experimentOn } from '@islavi/ng2-component-lab';
+  import { experimentOn } from '@islavi/ng-component-lab';
   import { ButtonComponent } from "./../components/button.component";
 
   export default experimentOn('Button')
@@ -173,12 +173,12 @@ This is a fork from <a href='https://github.com/synapse-wireless-labs/component-
     })
   ``` 
 
-#### Running Ng2 Component Lab
+#### Running Ng Component Lab
   1. In the `scripts` section of your package.json add a script to start Component Lab:
   ```json
   {
     "scripts": {
-      "lab": "ng2-component-lab --config .lab/ng2-component-lab.config.js -- feature"
+      "lab": "ng-component-lab --config .lab/ng-component-lab.config.js -- feature"
     }
   }
   ```
@@ -197,13 +197,13 @@ This is a fork from <a href='https://github.com/synapse-wireless-labs/component-
   ```
 
 
-#### Bulding ng2-component-lab from your project
+#### Bulding ng-component-lab from your project
 
 1. In the `scripts` section of your package.json add a script to build Component Lab:
   ```json
   {
     "scripts": {
-      "build-lab": "ng2-component-lab --config .lab/ng2-component-lab.config.js --build -- feature"
+      "build-lab": "ng-component-lab --config .lab/ng-component-lab.config.js --build -- feature"
     }
   }
   ```
@@ -231,7 +231,7 @@ This is a fork from <a href='https://github.com/synapse-wireless-labs/component-
   ```
 
   
-#### Bulding ng2-component-lab from src
+#### Bulding ng-component-lab from src
 
 1. Install all dependencies:
 
@@ -245,7 +245,7 @@ This is a fork from <a href='https://github.com/synapse-wireless-labs/component-
   yarn install
   ```
   
-2. Build ng2-component-lab:  
+2. Build ng-component-lab:  
   Via npm:
   ```bash
   npm run build
